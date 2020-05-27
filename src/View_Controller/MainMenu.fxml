@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.MainMenuController">
+   <children>
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="520.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="7.0" layoutY="2.0" prefHeight="80.0" prefWidth="800.0" style="-fx-background-color: lightblue;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="24.0" layoutY="14.0" prefHeight="51.0" prefWidth="244.0" text="InvManager 9000">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <Button layoutX="728.0" layoutY="562.0" minWidth="45.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="58.0" text="Exit" textAlignment="CENTER" AnchorPane.bottomAnchor="6.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <SplitPane dividerPositions="0.5" layoutY="80.0" prefHeight="521.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="519.0" prefWidth="391.0">
+               <children>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="395.0" style="-fx-background-color: lightblue;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="12.0" text="Parts">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="searchPartTextField" alignment="TOP_LEFT" layoutX="240.0" layoutY="13.0" prefHeight="9.0" prefWidth="126.0" style="-fx-background-color: white;" />
+                        <Button fx:id="searchPartButton" layoutX="175.0" layoutY="10.0" minWidth="45.0" mnemonicParsing="false" onAction="#searchPartClicked" prefHeight="32.0" prefWidth="58.0" text="Search" textAlignment="CENTER">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </padding>
+                  </Pane>
+                  <TableView fx:id="partTableView" layoutX="6.0" layoutY="50.0" prefHeight="404.0" prefWidth="395.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                     <columns>
+                        <TableColumn fx:id="partIDCol" prefWidth="69.0" text="PartID" />
+                        <TableColumn fx:id="partNameCol" prefWidth="107.0" text="Part Name" />
+                        <TableColumn fx:id="partStockCol" prefWidth="107.0" text="Inventory Level" />
+                        <TableColumn fx:id="partPriceCol" prefWidth="117.0" text="Price per Unit" />
+                     </columns>
+                  </TableView>
+                  <Pane layoutY="455.0" prefHeight="65.0" prefWidth="395.0" style="-fx-background-color: lightblue;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Button fx:id="addPartButton" layoutX="6.0" layoutY="8.0" minWidth="45.0" mnemonicParsing="false" onAction="#addPartClicked" prefHeight="32.0" prefWidth="58.0" text="Add" textAlignment="CENTER">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="modifyPartButton" layoutX="73.0" layoutY="8.0" minWidth="45.0" mnemonicParsing="false" onAction="#modifyPartClicked" prefHeight="32.0" prefWidth="58.0" text="Modify" textAlignment="CENTER">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deletePartButton" layoutX="140.0" layoutY="8.0" minWidth="45.0" mnemonicParsing="false" onAction="#deletePartClicked" prefHeight="32.0" prefWidth="58.0" text="Delete" textAlignment="CENTER">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="395.0" style="-fx-background-color: lightblue;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="12.0" text="Products">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="searchProductTextField" alignment="TOP_LEFT" layoutX="240.0" layoutY="13.0" prefHeight="9.0" prefWidth="126.0" style="-fx-background-color: white;" />
+                        <Button fx:id="searchProductButton" layoutX="175.0" layoutY="10.0" minWidth="45.0" mnemonicParsing="false" onAction="#searchProductClicked" prefHeight="32.0" prefWidth="58.0" text="Search" textAlignment="CENTER">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </padding>
+                  </Pane>
+                  <TableView fx:id="productTableView" layoutY="50.0" prefHeight="404.0" prefWidth="395.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                     <columns>
+                        <TableColumn fx:id="productIDCol" prefWidth="66.0" text="ProductID" />
+                        <TableColumn fx:id="productNameCol" prefWidth="110.0" text="Product Name" />
+                        <TableColumn fx:id="productStockCol" prefWidth="107.0" text="Inventory Level" />
+                        <TableColumn fx:id="productPriceCol" prefWidth="117.0" text="Price per Unit" />
+                     </columns>
+                  </TableView>
+                  <Pane layoutY="453.0" prefHeight="65.0" prefWidth="395.0" style="-fx-background-color: LIGHTBLUE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Button fx:id="addProductButton" layoutX="6.0" layoutY="8.0" minWidth="45.0" mnemonicParsing="false" onAction="#addProductClicked" prefHeight="32.0" prefWidth="58.0" text="Add" textAlignment="CENTER">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="modifyPartButton" layoutX="73.0" layoutY="8.0" minWidth="45.0" mnemonicParsing="false" onAction="#modifyProductClicked" prefHeight="32.0" prefWidth="58.0" text="Modify" textAlignment="CENTER">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deletePartButton" layoutX="140.0" layoutY="8.0" minWidth="45.0" mnemonicParsing="false" onAction="#deleteProductClicked" prefHeight="32.0" prefWidth="58.0" text="Delete" textAlignment="CENTER">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="exitButton" layoutX="333.0" layoutY="26.0" minWidth="45.0" mnemonicParsing="false" onAction="#exitClicked" prefHeight="32.0" prefWidth="58.0" text="Exit" textAlignment="CENTER">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
